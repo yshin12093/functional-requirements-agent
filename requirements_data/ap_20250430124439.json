@@ -1,0 +1,93 @@
+{
+  "project_id": "ap_20250430124439",
+  "name": "AP",
+  "description": "",
+  "created_at": "2025-04-30T12:44:39.106750",
+  "updated_at": "2025-04-30T12:51:15.736386",
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "text": "* The system shall track and display the patient's glucose levels in real-time.",
+      "source": "user",
+      "created_at": "2025-04-30T12:47:01.643785",
+      "updated_at": "2025-04-30T12:51:15.730995",
+      "status": "approved",
+      "metadata": {}
+    },
+    {
+      "id": "REQ-002",
+      "text": "* The system shall forecast high or low blood sugar events based on historical data and current trends.",
+      "source": "user",
+      "created_at": "2025-04-30T12:47:01.644868",
+      "updated_at": "2025-04-30T12:51:15.732438",
+      "status": "approved",
+      "metadata": {}
+    },
+    {
+      "id": "REQ-003",
+      "text": "* The system shall provide personalized recommendations for insulin dosing, medication, or lifestyle changes to help manage glucose levels.",
+      "source": "user",
+      "created_at": "2025-04-30T12:47:01.645307",
+      "updated_at": "2025-04-30T12:51:15.733200",
+      "status": "approved",
+      "metadata": {}
+    },
+    {
+      "id": "REQ-004",
+      "text": "* The system shall offer real-time alerts or notifications when glucose levels deviate from a target range.",
+      "source": "user",
+      "created_at": "2025-04-30T12:47:01.645887",
+      "updated_at": "2025-04-30T12:51:15.733811",
+      "status": "approved",
+      "metadata": {}
+    },
+    {
+      "id": "REQ-005",
+      "text": "* REQ-001: The system shall track and display the patient's glucose levels in real-time.",
+      "source": "user",
+      "created_at": "2025-04-30T12:49:34.067781",
+      "updated_at": "2025-04-30T12:51:15.734454",
+      "status": "approved",
+      "metadata": {}
+    },
+    {
+      "id": "REQ-006",
+      "text": "* REQ-002: The system shall forecast high or low blood sugar events based on historical data and current trends.",
+      "source": "user",
+      "created_at": "2025-04-30T12:49:34.068808",
+      "updated_at": "2025-04-30T12:51:15.735017",
+      "status": "approved",
+      "metadata": {}
+    },
+    {
+      "id": "REQ-007",
+      "text": "* REQ-003: The system shall provide personalized recommendations for insulin dosing, medication, or lifestyle changes to help manage glucose levels.",
+      "source": "user",
+      "created_at": "2025-04-30T12:49:34.069343",
+      "updated_at": "2025-04-30T12:51:15.735499",
+      "status": "approved",
+      "metadata": {}
+    },
+    {
+      "id": "REQ-008",
+      "text": "* REQ-004: The system shall offer real-time alerts or notifications when glucose levels deviate from a target range.",
+      "source": "user",
+      "created_at": "2025-04-30T12:49:34.069832",
+      "updated_at": "2025-04-30T12:51:15.735931",
+      "status": "approved",
+      "metadata": {}
+    },
+    {
+      "id": "REQ-009",
+      "text": "* REQ-005: The system shall be accessible through both mobile app and web interfaces.",
+      "source": "user",
+      "created_at": "2025-04-30T12:50:45.698905",
+      "updated_at": "2025-04-30T12:51:15.736383",
+      "status": "approved",
+      "metadata": {}
+    }
+  ],
+  "stakeholders": [],
+  "goals": [],
+  "constraints": []
+}
