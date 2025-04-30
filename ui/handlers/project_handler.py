@@ -54,7 +54,7 @@ class ProjectHandler:
             self.ui_components["status_panel"].update_status(f"Project: {project_data['name']}")
             
             # Clear chat history and add welcome message
-            self.ui_components["chat_area"].chat_history.clear()
+            self.ui_components["chat_area"].clear_chat_history()
             self._add_agent_message(f"Working on project: {project_data['name']}")
             self._add_agent_message(f"Description: {project_data.get('description', 'No description provided')}")
             

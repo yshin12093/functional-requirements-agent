@@ -116,12 +116,20 @@ class ConversationHandler:
             # Extract the response content
             ai_response = response['message']['content']
             
+            # Check if this response is a duplicate of the last assistant message
+            is_duplicate = False
+            if self.conversation_history and len(self.conversation_history) >= 2:
+                last_msg = self.conversation_history[-1]
+                if last_msg.get('role') == 'assistant' and last_msg.get('content') == ai_response:
+                    is_duplicate = True
+            
             # Extract and save requirements from both user message and AI response
             saved_user_reqs = self.requirements_handler.extract_requirements(user_message)
             saved_ai_reqs = self.requirements_handler.extract_requirements(ai_response)
             
-            # Store AI response in conversation history
-            self.add_assistant_message(ai_response)
+            # Only store AI response if it's not a duplicate
+            if not is_duplicate:
+                self.add_assistant_message(ai_response)
             
             return {
                 "success": True,

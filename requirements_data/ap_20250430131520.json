@@ -3,8 +3,18 @@
   "name": "ap",
   "description": "",
   "created_at": "2025-04-30T13:15:20.127822",
-  "updated_at": "2025-04-30T13:15:20.127825",
-  "requirements": [],
+  "updated_at": "2025-04-30T14:57:34.354392",
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "text": "\"The system shall provide personalized insights and alerts to help me prevent or manage nerve damage, kidney damage, or heart problems related to my type 1 diabetes.\"",
+      "source": "user",
+      "created_at": "2025-04-30T14:57:34.354317",
+      "updated_at": "2025-04-30T14:57:34.354380",
+      "status": "draft",
+      "metadata": {}
+    }
+  ],
   "stakeholders": [],
   "goals": [],
   "constraints": []

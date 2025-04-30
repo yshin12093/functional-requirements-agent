@@ -21,11 +21,11 @@ class AppStyles:
         # Set text colors
         palette.setColor(QPalette.Base, QColor(30, 30, 30))  # Dark gray for input fields
         palette.setColor(QPalette.AlternateBase, QColor(45, 45, 45))
-        palette.setColor(QPalette.Text, QColor(255, 255, 255))  # White text
-        palette.setColor(QPalette.ButtonText, QColor(255, 255, 255))  # White button text
+        palette.setColor(QPalette.Text, QColor(240, 240, 245))  # Slightly off-white text
+        palette.setColor(QPalette.ButtonText, QColor(240, 245, 255))  # Slightly blue-tinted text
         
         # Set button colors
-        palette.setColor(QPalette.Button, QColor(70, 130, 180))  # Steel blue for buttons
+        palette.setColor(QPalette.Button, QColor(60, 100, 140))  # Darker steel blue for buttons
         
         # Set highlight colors
         palette.setColor(QPalette.Highlight, QColor(42, 130, 218))
@@ -38,22 +38,22 @@ class AppStyles:
         """Get the application stylesheet"""
         return """
             QTextEdit { 
-                background-color: #262626; 
-                color: #ffffff; 
+                background-color:rgb(32, 32, 32); 
+                color:rgb(200, 197, 197); 
                 border: 1px solid #555555; 
-                border-radius: 5px; 
+                border-radius: 1px; 
             }
             QPushButton { 
-                background-color: #4682b4; 
-                color: white; 
-                border-radius: 5px; 
+                background-color:rgb(32, 32, 32); 
+                color:rgb(200, 197, 197); 
+                border-radius: 1px; 
                 font-weight: bold; 
             }
             QPushButton:hover { 
-                background-color: #5c9bd1; 
+                background-color:rgb(4, 60, 103); 
             }
             QLabel { 
-                color: #ffffff; 
+                color:rgb(200, 197, 197); 
             }
         """
     
@@ -66,7 +66,7 @@ class AppStyles:
         - System fonts: 'Arial', 'Helvetica', 'Times New Roman', 'Courier New'
         - Modern fonts: 'Roboto', 'Open Sans', 'Lato', 'Montserrat'
         - Monospace: 'Consolas', 'Courier New', 'Monaco', 'Menlo'
-        
+        ß
         The second parameter is the font size in points.
         """
         selected_font = "Lato"
@@ -87,11 +87,11 @@ class AppStyles:
     def get_button_styles():
         """Get button styles for different types of buttons"""
         return {
-            "project": "background-color: #9370DB; color: white; border-radius: 5px;",
-            "review": "background-color: #4682b4; color: white; border-radius: 5px;",
-            "complete": "background-color: #228B22; color: white; border-radius: 5px;",
-            "export": "background-color: #FF8C00; color: white; border-radius: 5px;",
-            "send": "background-color: #4682b4; color: white; border-radius: 5px;"
+            "project": "background-color: #7a5eb8; color: #f0f5ff; border-radius: 5px;",
+            "review": "background-color: #3a6a8e; color: #f0f5ff; border-radius: 5px;",
+            "complete": "background-color: #1a7a1a; color: #f0fff0; border-radius: 5px;",
+            "export": "background-color: #d17000; color: #fff8f0; border-radius: 5px;",
+            "send": "background-color: #3a6a8e; color: #f0f5ff; border-radius: 5px;"
         }
     
     @staticmethod
@@ -110,13 +110,13 @@ class AppStyles:
             "agent": """
                 <div style='background-color: #333333; padding: 15px; border-radius: 10px; margin-bottom: 15px;'>
                     <span style='color: #66ccff; font-weight: bold; font-size: 18px;'>Agent:</span> 
-                    <span style='color: #ffffff; font-size: 18px;'>{message}</span>
+                    <span style='color: #f0f0f5; font-size: 18px;'>{message}</span>
                 </div>
             """,
             "user": """
                 <div style='background-color: #444444; padding: 15px; border-radius: 10px; margin-bottom: 15px; text-align: right;'>
                     <span style='color: #99ff99; font-weight: bold; font-size: 18px;'>You:</span> 
-                    <span style='color: #ffffff; font-size: 18px;'>{message}</span>
+                    <span style='color: #f0f0f5; font-size: 18px;'>{message}</span>
                 </div>
             """
         }

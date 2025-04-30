@@ -1,0 +1,21 @@
+{
+  "project_id": "pa_20250430144918",
+  "name": "PA",
+  "description": "",
+  "created_at": "2025-04-30T14:49:18.718616",
+  "updated_at": "2025-04-30T14:50:41.804311",
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "text": "Functional Requirement: The system shall alert the user when their glucose levels are trending low or have reached a predefined threshold for hypoglycemia.",
+      "source": "user",
+      "created_at": "2025-04-30T14:50:41.804241",
+      "updated_at": "2025-04-30T14:50:41.804300",
+      "status": "draft",
+      "metadata": {}
+    }
+  ],
+  "stakeholders": [],
+  "goals": [],
+  "constraints": []
+}
