@@ -2,6 +2,7 @@
 Message handler for the Functional Requirements Agent.
 """
 from PySide6.QtGui import QTextCursor
+from ui.handlers.async_handler import LLMWorker
 
 class MessageHandler:
     """Handler for message-related functionality"""
@@ -46,7 +47,7 @@ class MessageHandler:
             chat_area._redraw_chat_history()
     
     def send_message(self):
-        """Process the user's message and generate a response"""
+        """Process the user's message and generate a response asynchronously"""
         user_message = self.ui_components["chat_area"].get_user_input()
         if not user_message:
             return
@@ -57,22 +58,49 @@ class MessageHandler:
         # Clear input field
         self.ui_components["chat_area"].clear_input()
         
-        # Add a temporary message to indicate the agent is thinking
-        thinking_message = "Thinking..."
-        self.add_agent_message(thinking_message, streaming=False)
+        # Add a temporary message to indicate the agent is working
+        working_message = "Working on it..."
+        self.add_agent_message(working_message, streaming=False)
         
-        # Process the message using the conversation handler
-        try:
-            result = self.conversation_handler.process_user_input(user_message)
-        except Exception as e:
-            # If there's an error, create a mock result for testing
-            result = {
-                "success": True,
-                "message": f"I understand you're interested in a glucose management system for type 1 diabetes patients. This is an important healthcare application. Could you tell me more about the specific requirements you're looking for? For example:\n\n1. Do you need real-time glucose monitoring?\n2. Should it integrate with insulin pumps?\n3. What kind of alerts or notifications are needed?\n4. Are there any specific reporting or data visualization needs?"
-            }
+        # Disable the send button while processing
+        send_button = self.ui_components["chat_area"].send_button
+        send_button.setEnabled(False)
+        send_button.setText("Processing...")
         
-        # Remove the "thinking" message
+        # Create and start the worker thread
+        self.worker = LLMWorker(self.conversation_handler, user_message)
+        self.worker.signals.finished.connect(self._handle_response)
+        self.worker.signals.error.connect(self._handle_error)
+        self.worker.start()
+    
+    def _handle_response(self, result):
+        """Handle the response from the worker thread"""
+        # Remove the "working" message
         self._remove_last_message()
+        
+        # Re-enable the send button
+        send_button = self.ui_components["chat_area"].send_button
+        send_button.setEnabled(True)
+        send_button.setText("Send")
+        
+        # Process the result
+        self._process_result(result)
+    
+    def _handle_error(self, error_message):
+        """Handle an error from the worker thread"""
+        # Remove the "working" message
+        self._remove_last_message()
+        
+        # Re-enable the send button
+        send_button = self.ui_components["chat_area"].send_button
+        send_button.setEnabled(True)
+        send_button.setText("Send")
+        
+        # Add error message
+        self.add_agent_message(f"An error occurred: {error_message}", streaming=False)
+        self.add_agent_message("Please try again or check your settings.", streaming=False)
+    
+    def _process_result(self, result):
         
         # Handle the response
         if result["success"]:
