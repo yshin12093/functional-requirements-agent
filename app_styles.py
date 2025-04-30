@@ -59,13 +59,28 @@ class AppStyles:
     
     @staticmethod
     def get_fonts():
-        """Get the fonts used in the application"""
+        """Get the fonts used in the application
+        
+        To change fonts throughout the application, modify the font family names below.
+        Common font options include:
+        - System fonts: 'Arial', 'Helvetica', 'Times New Roman', 'Courier New'
+        - Modern fonts: 'Roboto', 'Open Sans', 'Lato', 'Montserrat'
+        - Monospace: 'Consolas', 'Courier New', 'Monaco', 'Menlo'
+        
+        The second parameter is the font size in points.
+        """
+        selected_font = "Lato"
         return {
-            "app": QFont("Helvetica", 16),
-            "title": QFont("Helvetica", 28, QFont.Bold),
-            "description": QFont("Helvetica", 18),
-            "chat": QFont("Helvetica", 18),
-            "button": QFont("Helvetica", 16)
+            # Main application font
+            "app": QFont(selected_font, 16),
+            # Title font (large and bold)
+            "title": QFont(selected_font, 28, QFont.Bold),
+            # Description text font
+            "description": QFont(selected_font, 18),
+            # Chat message font
+            "chat": QFont(selected_font, 18),
+            # Button text font
+            "button": QFont(selected_font, 16)
         }
     
     @staticmethod

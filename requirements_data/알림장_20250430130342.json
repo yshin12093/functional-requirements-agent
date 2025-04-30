@@ -1,0 +1,39 @@
+{
+  "project_id": "\uc54c\ub9bc\uc7a5_20250430130342",
+  "name": "\uc54c\ub9bc\uc7a5",
+  "description": "",
+  "created_at": "2025-04-30T13:03:42.467449",
+  "updated_at": "2025-04-30T13:04:17.910304",
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "text": "* REQ-001: The system shall monitor and track incoming email messages.",
+      "source": "user",
+      "created_at": "2025-04-30T13:04:17.909050",
+      "updated_at": "2025-04-30T13:04:17.909122",
+      "status": "draft",
+      "metadata": {}
+    },
+    {
+      "id": "REQ-002",
+      "text": "* REQ-002: The system shall detect and notify the user of new, unread email messages in real-time.",
+      "source": "user",
+      "created_at": "2025-04-30T13:04:17.909899",
+      "updated_at": "2025-04-30T13:04:17.909907",
+      "status": "draft",
+      "metadata": {}
+    },
+    {
+      "id": "REQ-003",
+      "text": "* REQ-003: The system shall provide an interface for users to view and manage their email notifications.",
+      "source": "user",
+      "created_at": "2025-04-30T13:04:17.910297",
+      "updated_at": "2025-04-30T13:04:17.910301",
+      "status": "draft",
+      "metadata": {}
+    }
+  ],
+  "stakeholders": [],
+  "goals": [],
+  "constraints": []
+}
